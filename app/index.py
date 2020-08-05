@@ -6,7 +6,6 @@ import tornado.httpserver
 import tornado.web
 #import asyncio
 from datetime import datetime
-from bd.sqlite import *
 import json
 import os
 
