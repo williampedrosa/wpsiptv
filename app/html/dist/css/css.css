@@ -1,0 +1,32 @@
+thead {
+    text-align:center;
+}
+
+.center {
+    text-align:center;
+}
+
+.subNivel {
+    padding-left:0px;
+}
+
+.colorHead {
+    background-color:#d5d9dd;
+    font-weight: bold;
+}
+
+#agendaBACEN {
+    height: 100%;
+    width: 100%;
+    overflow:hidden;
+    left: 0;
+    top: 0;
+}
+
+#divAgendaBACEN {
+    height: 1000px;
+}
+
+.cel_imagem {
+    width: 35px;
+}

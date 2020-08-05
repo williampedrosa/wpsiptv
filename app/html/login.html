@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    {% include includes/head.html %}
+  </head>
+  <body class="hold-transition login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        Portal<b>STI</b>
+      </div>
+      <!-- /.login-logo -->
+      <div class="card">
+        <div class="card-body login-card-body">
+          <p class="login-box-msg">Faça login para iniciar sua sessão</p>
+    
+          <form method="post">
+            <div class="input-group mb-3"> 
+              <input type="text" class="form-control {% if 'Error' in globals() and 'inputEmail' in Error.keys() and Error['inputEmail'] %} is-invalid {% end %}" name="email" placeholder="ID Usuario" value="{% if 'Error' in globals() and 'email' in Error.keys() %} {{ Error['email'] }} {% end %}">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control {% if 'Error' in globals() and 'inputPass' in Error.keys() and Error['inputPass'] %} is-invalid {% end %}" name="password" placeholder="Senha">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            {% if 'Error' in globals() and 'message' in Error.keys() %}
+              <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> Atenção...</h5>
+                {{ Error['message'] }}
+              </div>
+            {% end %}
+            <div class="row">
+              <div class="col-8">
+                <div class="icheck-primary">
+                  <!--input type="checkbox" id="remember">
+                  <label for="remember">
+                    Remember Me
+                  </label-->
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+        </div>
+        <!-- /.login-card-body -->
+      </div>
+    </div>
+    <!-- /.login-box -->
+
+    {% include includes/foot.html %}
+
+  </body>
+</html>

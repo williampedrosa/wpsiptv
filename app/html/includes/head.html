@@ -1,0 +1,53 @@
+<title>{{ variaveis["title"] }}</title>
+  
+<!-- Font Awesome -->
+<link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- DataTables -->
+<link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<!-- Google Font: Source Sans Pro -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- Toastr -->
+<link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+<!-- JQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Select2 -->
+<link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="../../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<!-- daterange picker -->
+<link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+<!-- Tempusdominus Bootstrap 4 -->
+<link rel="stylesheet" href="../../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.css">
+<!-- Bootstrap Color Picker -->
+<link rel="stylesheet" href="../../plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+
+<!-- Custom -->
+<script>
+    $(function () {
+        $('#btnSair').click(function() {
+            $.cookie('user', '', { expires: -1, path: '/'});
+            location.reload();
+        });
+    });
+
+    function imgError(image) {
+        image.onerror = "";
+        image.src = "../img/user_default.png";
+        return true;
+    }
+
+    function loadImage(image)
+    {
+        image.onload = "";
+        $('img').removeAttr('hidden');
+    }
+</script>

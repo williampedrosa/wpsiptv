@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    {% include includes/head.html %}
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+      <!-- Navbar -->
+      {% include includes/navbar.html %}
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      {% include includes/sidebar.html %}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>{{ variaveis["title"] }}</h1>
+              </div>
+            </div> 
+          </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-12">
+
+              
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </section>
+
+        <!-- /.row -->
+        <!-- Modal do delete -->
+        <div class="modal fade" id="modal-delete">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Exclusão</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p id="modalBody"></p>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.Modal do delete -->
+        <!-- Modal do editar -->
+        <div class="modal fade" id="modal-create_edit">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title titleModal"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="txOperador">Operador</label>
+                    <input type="text" class="form-control" id="txOperador" placeholder="Digitar...">
+                  </div>
+                  <div class="form-group">
+                    <label for="txLoginOperador">Login</label>
+                    <input type="text" class="form-control" id="txLoginOperador" placeholder="Digitar...">
+                  </div>
+                  <div class="form-group">
+                    <label for="txRamal">Ramal</label>
+                    <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;9999999&quot;" data-mask="" im-insert="true" id="txRamal">
+                  </div>
+                  <div class="form-group">
+                    <label for="txDepartamento">Departamento</label>
+                    <input type="text" class="form-control" id="txDepartamento" placeholder="Digitar...">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="btnOK"></button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.Modal do editar -->
+
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+      {% include includes/footer.html %}
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    {% include includes/foot.html %}
+
+  </body>
+</html>

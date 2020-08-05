@@ -1,1 +1,1 @@
-"web: python hello.py" 
+web: python app\index.py

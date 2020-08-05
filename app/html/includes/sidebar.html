@@ -1,0 +1,62 @@
+<aside class="main-sidebar sidebar-dark-success elevation-4">
+  <!-- Brand Logo -->
+  <a href="../../index3.html" class="brand-link">
+    <img src="../../dist/img/AdminLTELogo.png"
+          alt="AdminLTE Logo"
+          class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+    <span class="brand-text font-weight-light">Portal STI</span>
+  </a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src='' class="img-circle elevation-2" alt="User Image" onerror="imgError(this);" onload="loadImage(this);" hidden>
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">{{ variaveis["usuarioNome"] }}</a>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column text-sm nav-flat" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+              with font-awesome or any other icon font library -->
+        {% for sidebar in variaveis["sidebar"] %}
+          {% set subitem_active = 'false' %} 
+          {% for submenu in sidebar['submenu'] %}
+            {% if submenu['href'] == variaveis["currentPage"] %}
+              {% set subitem_active = 'true' %}
+            {% end %}
+          {% end %}
+          <li class="nav-item has-treeview {% if subitem_active == 'true' %}menu-open{% end %}"> <!-- menu-open -->
+            <a href="{{ sidebar['href'] }}" class="nav-link {% if subitem_active == 'true' or sidebar['href'] == variaveis['currentPage'] %}active{% end %}"> <!-- active -->
+              <i class="nav-icon {{ sidebar['icone'] }}"></i>
+              <p>
+                {{ sidebar['nameGroup'] }}  <!-- Tables -->
+                {% if len(sidebar['submenu']) >= 1 %}<i class="fas fa-angle-left right"></i>{% end %}
+              </p>
+            </a>
+            {% if len(sidebar['submenu']) >= 1 %}
+              <ul class="nav nav-treeview">
+                {% for submenu in sidebar['submenu'] %}
+                  <li class="nav-item">
+                    <a href="{{ submenu['href'] }}" class="nav-link {% if submenu['href'] == variaveis['currentPage'] %}active{% end %}"> <!-- active -->
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>{{ submenu['name'] }}</p><!--p>Simple Tables</p-->
+                    </a>
+                  </li>
+                {% end %}
+              </ul>
+            {% end %}
+          </li>
+        {% end %}
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>
