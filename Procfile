@@ -1,1 +1,1 @@
-web: python app\index.py
+web: python app/index.py
