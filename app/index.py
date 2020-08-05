@@ -4,7 +4,7 @@ from requests.auth import HTTPBasicAuth
 import tornado.ioloop
 import tornado.httpserver
 import tornado.web
-import asyncio
+#import asyncio
 from datetime import datetime
 from bd.sqlite import *
 import json
@@ -160,7 +160,7 @@ def make_app():
 
 
 if __name__ == "__main__":
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     print("Auth : init")
     connSqlite = ConnSqlite()
     app = make_app()
