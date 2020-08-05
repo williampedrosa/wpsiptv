@@ -162,5 +162,5 @@ if __name__ == "__main__":
     #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     print("Auth : init")
     app = make_app()
-    app.listen(5000)
+    app.listen(int(os.environ.get("PORT", 5000)))
     tornado.ioloop.IOLoop.current().start()
