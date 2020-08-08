@@ -4,7 +4,8 @@ from requests.auth import HTTPBasicAuth
 import tornado.ioloop
 import tornado.httpserver
 import tornado.web
-#import asyncio
+import sqlite3
+import asyncio
 from datetime import datetime
 import json
 import os
@@ -51,7 +52,7 @@ class LoginHandler(BaseHandler):
         Error = {}
         if self.get_argument("email") != "" and self.get_argument("password") != "":
             # perform the Bind operation
-            if True:
+            if False:
                 if True:
 					
                     self.set_secure_cookie("user", self.get_argument("email"), expires_days=0.4) # 9 hrs
@@ -70,9 +71,14 @@ class LoginHandler(BaseHandler):
                                     "message" : c.result,
                                 }
             else:
-                Error = {
+                Error = { 
+                            "message" : os.listdir()
+                        }
+                '''
+                Error = { 
                             "message" : "Usuário '" + (self.get_argument("email")).upper() + "' sem permissão para acessar o portal. Favor entrar em contato com o gestor.",
                         }
+                '''
         else:
             Error["email"] = self.get_argument("email")
             Error["message"] = "Preencher usuário e senha."
@@ -159,8 +165,9 @@ def make_app():
 
 
 if __name__ == "__main__":
-    #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     print("Auth : init")
+    conn = sqlite3.connect('clientes.db')
     app = make_app()
     app.listen(int(os.environ.get("PORT", 5000)))
     tornado.ioloop.IOLoop.current().start()
