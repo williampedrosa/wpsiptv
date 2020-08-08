@@ -5,7 +5,7 @@ import tornado.ioloop
 import tornado.httpserver
 import tornado.web
 import sqlite3
-import asyncio
+#import asyncio
 from datetime import datetime
 import json
 import os
@@ -165,7 +165,7 @@ def make_app():
 
 
 if __name__ == "__main__":
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     print("Auth : init")
     conn = sqlite3.connect('clientes.db')
     app = make_app()
