@@ -167,7 +167,7 @@ def make_app():
 if __name__ == "__main__":
     #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     print("Auth : init")
-    conn = sqlite3.connect('clientes.db')
+    #conn = sqlite3.connect('clientes.db')
     app = make_app()
     app.listen(int(os.environ.get("PORT", 5000)))
     tornado.ioloop.IOLoop.current().start()
